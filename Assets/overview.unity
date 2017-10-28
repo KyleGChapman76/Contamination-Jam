@@ -198,6 +198,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &119649581 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 272332828}
+--- !u!114 &119649582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119649581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9827ba69ff8f57428c443ba7ed5c23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &272332828
 Prefab:
   m_ObjectHideFlags: 0
@@ -239,13 +255,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
       propertyPath: m_Name
-      value: Planet (5)
+      value: Hot Stuff
       objectReference: {fileID: 0}
     - target: {fileID: 23082346436353950, guid: edb09d94776e30e4792d3ea39e1a9d49,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 584d799a41897c2429b7c3b18f435bbc, type: 2}
+    - target: {fileID: 135918681330295696, guid: edb09d94776e30e4792d3ea39e1a9d49,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
