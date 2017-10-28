@@ -14,6 +14,8 @@ public class InnerViewManager : MonoBehaviour
 	private ResourceManager manager;
 
 	public Text foodAndFuelText;
+	public Renderer innerViewRenderer;
+	public Text planetNameText;
 
 	public void Start()
 	{
@@ -21,6 +23,10 @@ public class InnerViewManager : MonoBehaviour
 
 		this.manager = testManager;
 		this.planetAt = testPlanet;
+
+		innerViewRenderer.material = testPlanet.material;
+
+		planetNameText.text = "Planet " + testPlanet.name;
 
 		//STUB CODE
 		UpdateUI();
@@ -31,6 +37,10 @@ public class InnerViewManager : MonoBehaviour
 	{
 		planetAt = planetArrivedAt;
 		this.manager = manager;
+
+		innerViewRenderer.material = planetArrivedAt.material;
+
+		planetNameText.text = "Planet " + planetArrivedAt.name;
 
 		UpdateUI();
 	}
