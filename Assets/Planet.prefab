@@ -98,8 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   STARTING_FOOD: 0
   STARTING_FUEL: 0
-  material: {fileID: 0}
+  regularMaterial: {fileID: 0}
+  currentMaterial: {fileID: 0}
+  contaminatedMaterial: {fileID: 2100000, guid: f5ac9cd984dfdcd4f8f573757fbe338e,
+    type: 2}
   name: Blank
+  listOfJumpablePlanets: []
 --- !u!114 &114770152019679880
 MonoBehaviour:
   m_ObjectHideFlags: 1

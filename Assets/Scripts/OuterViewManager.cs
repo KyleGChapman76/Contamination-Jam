@@ -15,8 +15,7 @@ public class OuterViewManager : MonoBehaviour
 	[SerializeField]
 	private Vector3 cameraOffset;
 
-	[SerializeField]
-	private ResourceManager resourceManager;
+	private FullGameManager fullGameManager;
 
 	[SerializeField]
 	private string innerViewSceneName;
@@ -25,6 +24,8 @@ public class OuterViewManager : MonoBehaviour
 	{
 		DontDestroyOnLoad(this.gameObject);
 		MoveCamera();
+
+		fullGameManager = GameObject.FindObjectOfType<FullGameManager>();
 	}
 
 	public void SelectPlanet(GameObject planetObject)
@@ -58,7 +59,8 @@ public class OuterViewManager : MonoBehaviour
 	{
 		if (scene.name.Equals(innerViewSceneName))
 		{
-			FindObjectOfType<InnerViewManager>().InitializeManager(selectedPlanet, resourceManager);
+			FindObjectOfType<InnerViewManager>().InitializeManager(selectedPlanet, fullGameManager);
+			Destroy(this.gameObject);
 		}
 	}
 }

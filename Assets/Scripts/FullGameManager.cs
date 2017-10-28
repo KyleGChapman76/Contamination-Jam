@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class ResourceManager : MonoBehaviour
+public class FullGameManager : MonoBehaviour
 {
 	public const int STARTING_PEOPLE = 100;
 	public const int STARTING_FOOD = 50;
@@ -13,17 +15,24 @@ public class ResourceManager : MonoBehaviour
 	public const int GROWTH_RATE = 1;
 
 	public const int TIME_FOR_JUMP = 5;
-	public const int TIME_PER_SPREAD_OF_CONTAMINATION = 15;
+	public const int TIME_PER_SPREAD_OF_CONTAMINATION = 10;
 
 	public const int FUEL_TO_JUMP = 3;
 	public const int PEOPLE_TO_WIN = 2;
 
 	public const double FOOD_TO_FUEL_RATIO = .5f;
 
-	private int currentTime;
 	private int currentPeople;
 	private int currentFood;
 	private int currentFuel;
+
+	public Planet currentOccupiedPlanet;
+
+	private int currentTime;
+	private int timeOfNextContamination;
+
+	private Text timingText;
+	private Text resourceText;
 
 	private int mostRecentlyUpdatedTime;
 
@@ -35,12 +44,26 @@ public class ResourceManager : MonoBehaviour
 		currentFood = STARTING_FOOD;
 		currentFuel = STARTING_FUEL;
 		currentTime = 0;
+
+		timeOfNextContamination = TIME_PER_SPREAD_OF_CONTAMINATION + 2;
+	}
+
+	public void Update()
+	{
+		if (timingText != null)
+		{
+			timingText.text = "Day: " + currentTime + "   Day of next contamination: " + timeOfNextContamination;
+		}
+		if (resourceText != null)
+		{
+			resourceText.text = "People: " + currentPeople + " Fuel: " + currentFuel + " Food: " + currentFood;
+		}
 	}
 
 	public void CalculateExcursion()
 	{
 		currentTime += 1;
-		UpdateResources();
+		UpdateResourcesAndContamination();
 	}
 
 	public void CalculateJump()
@@ -48,7 +71,7 @@ public class ResourceManager : MonoBehaviour
 		currentTime += TIME_FOR_JUMP;
 		currentFuel -= FUEL_TO_JUMP;
 
-		UpdateResources();
+		UpdateResourcesAndContamination();
 	}
 
 	public void AddFood(int foodAdded)
@@ -107,7 +130,7 @@ public class ResourceManager : MonoBehaviour
 		}
 	}
 
-	private void UpdateResources()
+	private void UpdateResourcesAndContamination()
 	{
 		int timeDelta = currentTime - mostRecentlyUpdatedTime;
 
@@ -117,9 +140,10 @@ public class ResourceManager : MonoBehaviour
 			return;
 		}
 
-		//for each unit of time, simulate the resource changes
+		//for each unit of time, simulate the resource changes and contamination changes
 		for (int i = 0; i < timeDelta && currentPeople > 0; i++)
 		{
+			//food consumption
 			int foodConsumed = currentPeople * FOOD_PER_PERSON_PER_TIME;
 			if (foodConsumed >= currentFood) //people are starving
 			{
@@ -133,6 +157,13 @@ public class ResourceManager : MonoBehaviour
 				currentFood -= foodConsumed;
 				currentPeople += GROWTH_RATE; //flat people growth
 			}
+
+			if (mostRecentlyUpdatedTime + i == timeOfNextContamination)
+			{
+				ContaminatePlanet();
+				//TODO choose next contamination time
+				timeOfNextContamination = mostRecentlyUpdatedTime + i + TIME_PER_SPREAD_OF_CONTAMINATION;
+			}
 		}
 
 		//check if the player has lost the game
@@ -140,6 +171,9 @@ public class ResourceManager : MonoBehaviour
 		{
 			LoseGame();
 		}
+
+		//if current planet is contaminated, you lose the game
+		//TODO
 
 		mostRecentlyUpdatedTime = currentTime;
 	}
@@ -153,4 +187,47 @@ public class ResourceManager : MonoBehaviour
 	{
 		return currentFuel >= FUEL_TO_JUMP;
 	}
+
+	public void ContaminatePlanet()
+	{
+		bool success = false;
+		Planet[] planets = FindObjectsOfType<Planet>();
+		foreach (Planet planetCandidate in planets)
+		{
+			if (!planetCandidate.IsContaminated)
+			{
+				return;
+			}
+			foreach (Planet planetToContaminateCandidate in planetCandidate.listOfJumpablePlanets)
+			{
+				if (!planetToContaminateCandidate.IsContaminated)
+				{
+					planetToContaminateCandidate.IsContaminated = true;
+					success = true;
+				}
+			}
+		}
+
+		if (!success)
+		{
+			Debug.Log("Couldn't contaminate a planet!");
+		}
+	}
+
+	void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		resourceText = GameObject.FindGameObjectWithTag("ResourcesText").GetComponent<Text>();
+		timingText = GameObject.FindGameObjectWithTag("TimingText").GetComponent<Text>();
+	}
+	
 }

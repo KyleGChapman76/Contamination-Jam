@@ -1,23 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InnerViewManager : MonoBehaviour
 {
 	private Planet planetAt;
-	private ResourceManager manager;
+	private FullGameManager manager;
 
 	public Text foodAndFuelText;
 	public Renderer innerViewRenderer;
 	public Text planetNameText;
 
-	public void InitializeManager(Planet planetArrivedAt, ResourceManager manager)
+	public string outerViewSceneName;
+
+	public void InitializeManager(Planet planetArrivedAt, FullGameManager manager)
 	{
 		planetAt = planetArrivedAt;
 		this.manager = manager;
 
-		innerViewRenderer.material = planetArrivedAt.material;
+		innerViewRenderer.material = planetArrivedAt.currentMaterial;
 
 		planetNameText.text = "Planet " + planetArrivedAt.name;
 
@@ -55,7 +58,8 @@ public class InnerViewManager : MonoBehaviour
 	{
 		if (manager.CanLeavePlanet())
 		{
-			//TODO
+			manager.CalculateJump();
+			SceneManager.LoadScene(outerViewSceneName);
 		}
 	}
 }

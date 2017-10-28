@@ -50,12 +50,50 @@ public class Planet : MonoBehaviour
 	}
 	private int currentFuel;
 
-	public Material material;
+	public Material regularMaterial;
+	public Material currentMaterial;
+	public Material contaminatedMaterial;
 	public string name;
+
+	public bool IsContaminated
+	{
+		get
+		{
+			return isContaminated;
+		}
+		set
+		{
+			isContaminated = value;
+			if (isContaminated)
+			{
+				currentMaterial = contaminatedMaterial;
+			}
+		}
+	}
+	private bool isContaminated;
+
+	public Planet[] listOfJumpablePlanets;
+	private HashSet<Planet> setOfJumpablePlanets;
 
 	void Start ()
 	{
 		currentFood = STARTING_FOOD;
 		currentFuel = STARTING_FUEL;
+
+		foreach (Planet pla in listOfJumpablePlanets)
+		{
+			setOfJumpablePlanets.Add(pla);
+		}
+
+		regularMaterial = currentMaterial;
+	}
+
+	public bool CanJumpFromThisToThere(Planet destination)
+	{
+		if (destination.isContaminated)
+		{
+			return false;
+		}
+		return setOfJumpablePlanets.Contains(destination);
 	}
 }
