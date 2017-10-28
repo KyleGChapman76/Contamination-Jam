@@ -214,6 +214,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9827ba69ff8f57428c443ba7ed5c23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &119649583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 119649581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: 584d799a41897c2429b7c3b18f435bbc, type: 2}
+  name: Hot Stuff
 --- !u!1001 &272332828
 Prefab:
   m_ObjectHideFlags: 0
@@ -316,6 +331,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &444008950 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 444008949}
+--- !u!114 &444008951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 444008950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 0}
+  name: HARBINGER
 --- !u!1001 &628203770
 Prefab:
   m_ObjectHideFlags: 0
@@ -363,6 +398,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &628203771 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 628203770}
+--- !u!114 &628203772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 628203771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: f11e7d76121f11d44ae56fbf38359f96, type: 2}
+  name: Terros
 --- !u!1 &1037674846
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +549,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1109190914 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1109190913}
+--- !u!114 &1109190915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1109190914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: 75c923a49fa98d644bf218aa8e337f92, type: 2}
+  name: Zebes
 --- !u!1001 &1111623420
 Prefab:
   m_ObjectHideFlags: 0
@@ -511,7 +586,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4159960254038040, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -32.408634
+      value: -32.8
       objectReference: {fileID: 0}
     - target: {fileID: 4159960254038040, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
       propertyPath: m_LocalRotation.x
@@ -545,6 +620,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1111623421 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1111623420}
+--- !u!114 &1111623422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111623421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: 208465ea116850542aaee250c813002e, type: 2}
+  name: Beaux
 --- !u!1001 &1236604827
 Prefab:
   m_ObjectHideFlags: 0
@@ -596,6 +691,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1236604828 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1236604827}
+--- !u!114 &1236604829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1236604828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: 3ac82bd93923a0c4fa8a507c1e09f919, type: 2}
+  name: Lordarn
 --- !u!1001 &1502457305
 Prefab:
   m_ObjectHideFlags: 0
@@ -647,6 +762,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1502457306 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1502457305}
+--- !u!114 &1502457307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1502457306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: d20cace049251d64085317a712dca5ef, type: 2}
+  name: Tauntau
 --- !u!1 &1521777204
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +898,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1901310051 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1901310050}
+--- !u!114 &1901310052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901310051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: b72206684ec92a24388b45b8217093b9, type: 2}
+  name: MARS-2
 --- !u!1001 &1984653310
 Prefab:
   m_ObjectHideFlags: 0
@@ -814,3 +969,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1984653311 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1984653310}
+--- !u!114 &1984653312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1984653311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 2100000, guid: b3b151d853e67414490df5bdde0f7cc9, type: 2}
+  name: Crag-C
