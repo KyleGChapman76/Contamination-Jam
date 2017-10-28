@@ -5,33 +5,12 @@ using UnityEngine.UI;
 
 public class InnerViewManager : MonoBehaviour
 {
-	//stub code
-	public Planet testPlanet;
-	public ResourceManager testManager;
-	//stub code
-
 	private Planet planetAt;
 	private ResourceManager manager;
 
 	public Text foodAndFuelText;
 	public Renderer innerViewRenderer;
 	public Text planetNameText;
-
-	public void Start()
-	{
-		//STUB CODE
-
-		this.manager = testManager;
-		this.planetAt = testPlanet;
-
-		innerViewRenderer.material = testPlanet.material;
-
-		planetNameText.text = "Planet " + testPlanet.name;
-
-		//STUB CODE
-		UpdateUI();
-	}
-
 
 	public void InitializeManager(Planet planetArrivedAt, ResourceManager manager)
 	{

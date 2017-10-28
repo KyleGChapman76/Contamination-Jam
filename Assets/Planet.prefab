@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33912706929630338}
   - component: {fileID: 135918681330295696}
   - component: {fileID: 23082346436353950}
+  - component: {fileID: 114770152019679880}
+  - component: {fileID: 114563868826659958}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -83,6 +85,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967032314293580}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114563868826659958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967032314293580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503208c823091104b9a283f6aad3291e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  STARTING_FOOD: 0
+  STARTING_FUEL: 0
+  material: {fileID: 0}
+  name: Blank
+--- !u!114 &114770152019679880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1967032314293580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9827ba69ff8f57428c443ba7ed5c23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135918681330295696
 SphereCollider:
   m_ObjectHideFlags: 1
