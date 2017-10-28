@@ -50,6 +50,9 @@ public class Planet : MonoBehaviour
 	}
 	private int currentFuel;
 
+	public Material material;
+	public string name;
+
 	void Start ()
 	{
 		currentFood = STARTING_FOOD;
