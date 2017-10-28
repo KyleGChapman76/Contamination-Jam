@@ -7,10 +7,9 @@ public class ResourceManager : MonoBehaviour
 	public const int STARTING_PEOPLE = 100;
 	public const int STARTING_FOOD = 50;
 	public const int STARTING_FUEL = 20;
-	//public static const int STARTING_MINERAL = 100;
 
 	public const int FOOD_PER_PERSON_PER_TIME = 1;
-	public const int STARVATION_RATIO = 2; //1 over this number of the percentage of starvers that die
+	public const int STARVATION_RATIO = 2; //1 over this number is the percentage of starvers that die
 	public const int GROWTH_RATE = 1;
 
 	public const int TIME_FOR_JUMP = 5;
@@ -38,12 +37,74 @@ public class ResourceManager : MonoBehaviour
 		currentTime = 0;
 	}
 
-	public void JumpToNewPlanet()
+	public void CalculateExcursion()
+	{
+		currentTime += 1;
+		UpdateResources();
+	}
+
+	public void CalculateJump()
 	{
 		currentTime += TIME_FOR_JUMP;
 		currentFuel -= FUEL_TO_JUMP;
 
 		UpdateResources();
+	}
+
+	public void AddFood(int foodAdded)
+	{
+		if (foodAdded <= 0)
+		{
+			Debug.Log("Trying to add 0 or negative food to the resources.");
+		}
+		else
+		{
+			currentFood += foodAdded;
+		}
+	}
+
+	public void RemoveFood(int foodRemoved)
+	{
+		if (foodRemoved <= 0)
+		{
+			Debug.Log("Trying to remove 0 or negative food from the resources.");
+		}
+		else
+		{
+			currentFood -= foodRemoved;
+			if (currentFood < 0)
+			{
+				currentFood = 0;
+			}
+		}
+	}
+
+	public void AddFuel(int fuelAdded)
+	{
+		if (fuelAdded <= 0)
+		{
+			Debug.Log("Trying to add 0 or negative fuel to the resources.");
+		}
+		else
+		{
+			currentFuel += fuelAdded;
+		}
+	}
+
+	public void RemoveFuel(int fuelRemoved)
+	{
+		if (fuelRemoved <= 0)
+		{
+			Debug.Log("Trying to remove 0 or negative fuel from the resources.");
+		}
+		else
+		{
+			currentFuel -= fuelRemoved;
+			if (currentFuel < 0)
+			{
+				currentFuel = 0;
+			}
+		}
 	}
 
 	private void UpdateResources()
@@ -57,7 +118,7 @@ public class ResourceManager : MonoBehaviour
 		}
 
 		//for each unit of time, simulate the resource changes
-		for (int i = 0; i < timeDelta; i++)
+		for (int i = 0; i < timeDelta && currentPeople > 0; i++)
 		{
 			int foodConsumed = currentPeople * FOOD_PER_PERSON_PER_TIME;
 			if (foodConsumed >= currentFood) //people are starving
@@ -70,6 +131,7 @@ public class ResourceManager : MonoBehaviour
 			else
 			{
 				currentFood -= foodConsumed;
+				currentPeople += GROWTH_RATE; //flat people growth
 			}
 		}
 
@@ -85,5 +147,10 @@ public class ResourceManager : MonoBehaviour
 	private void LoseGame()
 	{
 		//TODO
+	}
+
+	public bool CanLeavePlanet()
+	{
+		return currentFuel >= FUEL_TO_JUMP;
 	}
 }
