@@ -80,12 +80,13 @@ public class Planet : MonoBehaviour
 		currentFood = STARTING_FOOD;
 		currentFuel = STARTING_FUEL;
 
+		setOfJumpablePlanets = new HashSet<Planet>();
 		foreach (Planet pla in listOfJumpablePlanets)
 		{
 			setOfJumpablePlanets.Add(pla);
 		}
 
-		regularMaterial = currentMaterial;
+		currentMaterial = regularMaterial;
 	}
 
 	public bool CanJumpFromThisToThere(Planet destination)

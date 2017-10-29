@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class InnerViewManager : MonoBehaviour
 {
 	private Planet planetAt;
-	private FullGameManager manager;
+	private OuterViewManager outerViewManager;
+	private FullGameManager fullGameManager;
 
 	public Text foodAndFuelText;
 	public Renderer innerViewRenderer;
@@ -15,10 +16,12 @@ public class InnerViewManager : MonoBehaviour
 
 	public string outerViewSceneName;
 
-	public void InitializeManager(Planet planetArrivedAt, FullGameManager manager)
+	public void InitializeManager(Planet planetArrivedAt, OuterViewManager outerViewManager, FullGameManager fullGameManager)
 	{
 		planetAt = planetArrivedAt;
-		this.manager = manager;
+
+		this.outerViewManager = outerViewManager;
+		this.fullGameManager = fullGameManager;
 
 		innerViewRenderer.material = planetArrivedAt.currentMaterial;
 
@@ -36,9 +39,9 @@ public class InnerViewManager : MonoBehaviour
 	{
 		if (planetAt.CurrentFood >= 0)
 		{
-			planetAt.CurrentFood = planetAt.CurrentFood - 1;
-			manager.AddFood(1);
-			manager.CalculateExcursion();
+			planetAt.CurrentFood = planetAt.CurrentFood - 50;
+			fullGameManager.AddFood(50);
+			fullGameManager.CalculateExcursion();
 		}
 		UpdateUI();
 	}
@@ -47,18 +50,20 @@ public class InnerViewManager : MonoBehaviour
 	{
 		if (planetAt.CurrentFuel >= 0)
 		{
-			planetAt.CurrentFuel = planetAt.CurrentFuel - 1;
-			manager.AddFuel(1);
-			manager.CalculateExcursion();
+			planetAt.CurrentFuel = planetAt.CurrentFuel - 50;
+			fullGameManager.AddFuel(50);
+			fullGameManager.CalculateExcursion();
 		}
 		UpdateUI();
 	}
 
 	public void LeavePlanet()
 	{
-		if (manager.CanLeavePlanet())
+		if (fullGameManager.CanLeavePlanet())
 		{
-			manager.CalculateJump();
+			fullGameManager.CalculateJump();
+			Destroy(outerViewManager);
+			Destroy(planetAt.gameObject);
 			SceneManager.LoadScene(outerViewSceneName);
 		}
 	}

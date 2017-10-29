@@ -6,11 +6,6 @@ public class PlanetUI : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-		FindObjectOfType<OuterViewManager>().GoToPlanet();
-	}
-
-	void OnMouseOver()
-	{
 		FindObjectOfType<OuterViewManager>().SelectPlanet(this.gameObject);
 	}
 }

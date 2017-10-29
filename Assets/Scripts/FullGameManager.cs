@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class FullGameManager : MonoBehaviour
 {
-	public const int STARTING_PEOPLE = 100;
-	public const int STARTING_FOOD = 50;
+	public const int STARTING_PEOPLE = 20;
+	public const int STARTING_FOOD = 1000;
 	public const int STARTING_FUEL = 20;
 
 	public const int FOOD_PER_PERSON_PER_TIME = 1;

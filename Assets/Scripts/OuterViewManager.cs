@@ -25,14 +25,21 @@ public class OuterViewManager : MonoBehaviour
 		DontDestroyOnLoad(this.gameObject);
 		MoveCamera();
 
+		selectedPlanet = selectedPlanetObject.GetComponent<Planet>();
+
 		fullGameManager = GameObject.FindObjectOfType<FullGameManager>();
+		fullGameManager.currentOccupiedPlanet = selectedPlanet;
 	}
 
 	public void SelectPlanet(GameObject planetObject)
 	{
-		selectedPlanetObject = planetObject;
-		selectedPlanet = selectedPlanetObject.GetComponent<Planet>();
-		MoveCamera();
+		Planet planetToSelect = planetObject.GetComponent<Planet>();
+		if (planetToSelect == fullGameManager.currentOccupiedPlanet || fullGameManager.currentOccupiedPlanet.CanJumpFromThisToThere(planetToSelect))
+		{
+			selectedPlanetObject = planetObject;
+			selectedPlanet = selectedPlanetObject.GetComponent<Planet>();
+			MoveCamera();
+		}
 	}
 
 	public void MoveCamera()
@@ -40,9 +47,15 @@ public class OuterViewManager : MonoBehaviour
 		gameCamera.transform.position = selectedPlanetObject.transform.position + cameraOffset;
 	}
 
-	public void GoToPlanet()
+	public void GoToSelectedPlanet()
 	{
-		SceneManager.LoadScene(innerViewSceneName);
+		if (fullGameManager.currentOccupiedPlanet.CanJumpFromThisToThere(selectedPlanet))
+		{
+			fullGameManager.currentOccupiedPlanet = selectedPlanet;
+			fullGameManager.CalculateJump();
+			DontDestroyOnLoad(selectedPlanetObject);
+			SceneManager.LoadScene(innerViewSceneName);
+		}
 	}
 
 	void OnEnable()
@@ -59,8 +72,7 @@ public class OuterViewManager : MonoBehaviour
 	{
 		if (scene.name.Equals(innerViewSceneName))
 		{
-			FindObjectOfType<InnerViewManager>().InitializeManager(selectedPlanet, fullGameManager);
-			Destroy(this.gameObject);
+			FindObjectOfType<InnerViewManager>().InitializeManager(selectedPlanet, this, fullGameManager);
 		}
 	}
 }
