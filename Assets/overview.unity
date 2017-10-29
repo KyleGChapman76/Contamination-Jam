@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -686,7 +686,6 @@ MonoBehaviour:
   selectedPlanetObject: {fileID: 628203771}
   gameCamera: {fileID: 1037674849}
   cameraOffset: {x: 0, y: 25, z: 16}
-  resourceManager: {fileID: 0}
   innerViewSceneName: innerview
 --- !u!4 &1379001338
 Transform:
@@ -837,12 +836,12 @@ Prefab:
     - target: {fileID: 224161091312416080, guid: ac6014b281b78154793842fea3819eb9,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 290.5
+      value: 371.5
       objectReference: {fileID: 0}
     - target: {fileID: 224161091312416080, guid: ac6014b281b78154793842fea3819eb9,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 163.5
+      value: 209
       objectReference: {fileID: 0}
     - target: {fileID: 224161091312416080, guid: ac6014b281b78154793842fea3819eb9,
         type: 2}
@@ -1003,6 +1002,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb09d94776e30e4792d3ea39e1a9d49, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1903693939 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1967032314293580, guid: edb09d94776e30e4792d3ea39e1a9d49,
+    type: 2}
+  m_PrefabInternal: {fileID: 1502457305}
+--- !u!114 &1903693940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1903693939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b1c2c9e9ed0184bb041b239cff7c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: SEND NUDES
 --- !u!1 &1926640215
 GameObject:
   m_ObjectHideFlags: 0

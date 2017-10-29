@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e980bc7fbb00dc34b86b95ac842d1920, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.28717816, g: 0.335866, b: 0.5218967, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 402295924}
   - component: {fileID: 402295923}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Text Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -179,26 +179,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "What the fuck did you just fucking say about me, you little bitch? I\u2019ll
-    have you know I graduated top of my class in the Navy Seals, and I\u2019ve been
-    involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed
-    kills. I am trained in gorilla warfare and I\u2019m the top sniper in the entire
-    US armed forces. You are nothing to me but just another target. I will wipe you
-    the fuck out with precision the likes of which has never been seen before on this
-    Earth, mark my fucking words. You think you can get away with saying that shit
-    to me over the Internet? Think again, fucker. As we speak I am contacting my secret
-    network of spies across the USA and your IP is being traced right now so you better
-    prepare for the storm, maggot. The storm that wipes out the pathetic little thing
-    you call your life. You\u2019re fucking dead, kid. I can be anywhere, anytime,
-    and I can kill you in over seven hundred ways, and that\u2019s just with my bare
-    hands. Not only am I extensively trained in unarmed combat, but I have access
-    to the entire arsenal of the United States Marine Corps and I will use it to its
-    full extent to wipe your miserable ass off the face of the continent, you little
-    shit. If only you could have known what unholy retribution your little \u201Cclever\u201D
-    comment was about to bring down upon you, maybe you would have held your fucking
-    tongue. But you couldn\u2019t, you didn\u2019t, and now you\u2019re paying the
-    price, you goddamn idiot. I will shit fury all over you and you will drown in
-    it. You\u2019re fucking dead, kiddo.\n"
+  m_Text: "To be fair, you have to have a very high IQ to understand Rick and Morty.
+    The humour is extremely subtle, and without a solid grasp of theoretical physics
+    most of the jokes will go over a typical viewer\u2019s head. There\u2019s also
+    Rick\u2019s nihilistic outlook, which is deftly woven into his characterisation-
+    his personal philosophy draws heavily from Narodnaya Volya literature, for instance.
+    The fans understand this stuff; they have the intellectual capacity to truly appreciate
+    the depths of these jokes, to realise that they\u2019re not just funny- they say
+    something deep about LIFE. As a consequence people who dislike Rick & Morty truly
+    ARE idiots- of course they wouldn\u2019t appreciate, for instance, the humour
+    in Rick\u2019s existential catchphrase \u201CWubba Lubba Dub Dub,\u201D which
+    itself is a cryptic reference to Turgenev\u2019s Russian epic Fathers and Sons.
+    I\u2019m smirking right now just imagining one of those addlepated simpletons
+    scratching their heads in confusion as Dan Harmon\u2019s genius wit unfolds itself
+    on their television screens. What fools.. how I pity them. \U0001F602\r\n\r\nAnd
+    yes, by the way, i DO have a Rick & Morty tattoo. And no, you cannot see it. It\u2019s
+    for the ladies\u2019 eyes only- and even then they have to demonstrate that they\u2019re
+    within 5 IQ points of my own (preferably lower) beforehand. Nothin personnel kid
+    \U0001F60E"
 --- !u!222 &402295924
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -287,7 +285,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 446068077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290.5, y: 163.5, z: 0}
+  m_LocalPosition: {x: 371.5, y: 209, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 530624847}
@@ -324,7 +322,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 530624846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0000076293945, y: 65.40001, z: 0}
+  m_LocalPosition: {x: -0.000015258789, y: 83.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 446068081}
@@ -428,7 +426,7 @@ GameObject:
   - component: {fileID: 1202220366}
   - component: {fileID: 1202220365}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Text Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -484,9 +482,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GAME NAME
-
-'
+  m_Text: SPACE CHUNK
 --- !u!222 &1202220366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -829,7 +825,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1762646156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 251.28252, y: -150.22601, z: 0}
+  m_LocalPosition: {x: 321.34753, y: -192.03201, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1353553120}
